@@ -29,8 +29,15 @@ def calculate_normal_vector_PD(error_x, error_y, d_x, d_y):
     nx = K_p * error_x + K_d * d_x
     ny = K_p * error_y + K_d * d_y
 
+    nmag = math.sqrt(nx**2 + ny**2 + 1)  # Since nz = 1, we calculate the magnitude
+
+    # Normalize the components of the normal vector
+    nx /= nmag
+    ny /= nmag
+    nz = 1 / nmag  # Since nz is fixed to 1
+
     # Calculate nz to ensure the normal vector remains a unit vector
-    nz = math.sqrt(1 - nx**2 - ny**2)
+    # nz = math.sqrt(1 - nx**2 - ny**2)
     print(f"nx: {nx} \n ny:{ny} \n nz:{nz}")
 
     return nx, ny, nz
@@ -39,6 +46,7 @@ def calculate_normal_vector_P(error_x, error_y):
     # Proportional control outputs
     nx = K_p * error_x
     ny = K_p * error_y
+
 
     # Calculate nz to ensure the normal vector remains a unit vector
     nz = math.sqrt(1 - nx**2 - ny**2)

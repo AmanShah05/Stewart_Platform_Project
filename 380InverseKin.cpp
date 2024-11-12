@@ -59,6 +59,7 @@ int main(){
   double testC = platform_theta(C , 0.3, 0);
 
   cout << testA << " " << testB << " " << testC ;
+  cout << "hi does committing work";
 }
 
 

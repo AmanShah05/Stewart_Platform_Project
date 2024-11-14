@@ -16,8 +16,8 @@ double phi_a, phi_b, phi_c;
 #define C 2
 
 //all dimensions are in cm
-double R = 15; //platform radius
-double RM = 15; //radial distance from base centre to motors
+double R = 12.5; //platform radius
+double RM = 1.5; //radial distance from base centre to motors
 double L1 = 6.719; //bottom link length
 double L2 = 9.4592; //top link length
 

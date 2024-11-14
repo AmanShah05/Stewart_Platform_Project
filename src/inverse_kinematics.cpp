@@ -112,13 +112,13 @@ void receiveEvent(int howMany) {
 
     // Calculate angles based on received x and y
     double* vec = unitVec(x, y);
-    double testA = platformAngle(0, vec) * 180 / PI;
-    double testB = platformAngle(1, vec) * 180 / PI;
-    double testC = platformAngle(2, vec) * 180 / PI;
+    double platformA = platformAngle(0, vec);
+    double platformB = platformAngle(1, vec);
+    double platformC = platformAngle(2, vec);
 
-    double motorA = motorAngle(testA, hz) * 180 / PI;
-    double motorB = motorAngle(testB, hz) * 180 / PI;
-    double motorC = motorAngle(testC, hz) * 180 / PI;
+    double motorA = motorAngle(platformA, hz) * 180 / PI;
+    double motorB = motorAngle(platformB, hz) * 180 / PI;
+    double motorC = motorAngle(platformC, hz) * 180 / PI;
 
     // Send motor angles to Serial Monitor
     Serial.print("Motor Angles: ");
